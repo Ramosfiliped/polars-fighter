@@ -1,5 +1,7 @@
 import "./Modalities.css";
+import heroImage from "../../assets/jiujitsu.png"
 
+import PageHero from "../../components/PageHero/PageHero"
 const modalities = [
   {
     title: "Jiu-Jitsu",
@@ -30,16 +32,12 @@ const modalities = [
 export default function Modalities() {
   return (
     <div className="modalities-page">
-      <section className="modalities-hero">
-        <div className="hero-content">
-          <h1>Nossas Modalidades</h1>
-
-          <p>
-            Escolha a modalidade que mais combina com seus objetivos e
-            comece sua evolução hoje.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image={heroImage}
+        title="Nossas Modalidades"
+        subtitle="Escolha a modalidade que mais combina com seus objetivos e
+            comece sua evolução hoje."
+      />
 
       <section className="modalities-section">
         {modalities.map((modality) => (

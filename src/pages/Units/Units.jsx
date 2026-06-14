@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./Units.css";
 import { Link } from "react-router-dom";
 import { units } from "../../data/units";
-
+import heroImage from "../../assets/boxe.png"
+import PageHero from "../../components/PageHero/PageHero"
 export default function Units() {
   const [city, setCity] = useState("Todas");
 
@@ -20,92 +21,85 @@ export default function Units() {
 
   return (
     <div className="units-page">
+		<PageHero
+			image={heroImage}
+			title="Nossas Unidades"
+			subtitle="Escolha sua cidade e encontre
+            a unidade mais próxima."
+		/>
 
-      <section className="units-hero">
-        <div className="overlay" />
+		<section className="filter-section">
+			<h2>Encontre uma unidade</h2>
 
-        <div className="hero-content">
-          <h1>Nossas Unidades</h1>
+			<select
+			value={city}
+			onChange={(e) =>
+				setCity(e.target.value)
+			}
+			>
+			{cities.map((city) => (
+				<option
+				key={city}
+				value={city}
+				>
+				{city}
+				</option>
+			))}
+			</select>
+		</section>
 
-          <p>
-            Escolha sua cidade e encontre
-            a unidade mais próxima.
-          </p>
-        </div>
-      </section>
+		<section className="units-grid">
+			{filteredUnits.map((unit) => (
+			<article
+				key={unit.id}
+				className="unit-card"
+			>
+				<img
+				src={unit.image}
+				alt={unit.name}
+				/>
 
-      <section className="filter-section">
-        <h2>Encontre uma unidade</h2>
+				<div className="unit-content">
+				<h3>{unit.name}</h3>
 
-        <select
-          value={city}
-          onChange={(e) =>
-            setCity(e.target.value)
-          }
-        >
-          {cities.map((city) => (
-            <option
-              key={city}
-              value={city}
-            >
-              {city}
-            </option>
-          ))}
-        </select>
-      </section>
+				<span>
+					{unit.neighborhood}
+				</span>
 
-      <section className="units-grid">
-        {filteredUnits.map((unit) => (
-          <article
-            key={unit.id}
-            className="unit-card"
-          >
-            <img
-              src={unit.image}
-              alt={unit.name}
-            />
+				<p>{unit.address}</p>
 
-            <div className="unit-content">
-              <h3>{unit.name}</h3>
+				<div className="unit-modalities">
+					{unit.modalities.map(
+					(modality) => (
+						<span
+						key={modality}
+						className="tag"
+						>
+						{modality}
+						</span>
+					)
+					)}
+				</div>
 
-              <span>
-                {unit.neighborhood}
-              </span>
+				<div className="buttons">
+					<Link
+						to={`/unidades/${unit.slug}`}
+					>
+						Ver Unidade
+					</Link>
 
-              <p>{unit.address}</p>
-
-              <div className="unit-modalities">
-                {unit.modalities.map(
-                  (modality) => (
-                    <span
-                      key={modality}
-                      className="tag"
-                    >
-                      {modality}
-                    </span>
-                  )
-                )}
-              </div>
-
-              <div className="buttons">
-                <Link
-                    to={`/unidades/${unit.slug}`}
-                >
-                    Ver Unidade
-                </Link>
-
-                <a
-                  href={unit.whatsapp}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  WhatsApp
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
-      </section>
+					<a
+					href={unit.whatsapp}
+					target="_blank"
+					rel="noreferrer"
+					>
+					WhatsApp
+					</a>
+				</div>
+				</div>
+			</article>
+			))}
+		</section>
 
     </div>
   );
