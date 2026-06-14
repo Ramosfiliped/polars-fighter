@@ -1,0 +1,30 @@
+:root{
+    --primary:#0057ff;
+    --primary-dark:#0038a8;
+
+    --background:#050b16;
+    --surface:#0c1628;
+
+    --text:#ffffff;
+    --text-secondary:#a0aec0;
+
+    --border:#1e293b;
+}
+
+html,
+body,
+#root {
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: #050b16;
+  color: white;
+  overflow-x: hidden;
+}

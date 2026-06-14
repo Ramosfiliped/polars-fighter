@@ -1,0 +1,417 @@
+.unit-details {
+  min-height: 100vh;
+
+  background: var(--background);
+  color: var(--text);
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.unit-banner {
+  position: relative;
+
+  height: 60vh;
+  min-height: 450px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.unit-banner-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.75)
+  );
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  padding: 0 2rem;
+
+  max-width: 800px;
+}
+
+.banner-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+  margin-bottom: 1rem;
+
+  font-weight: 700;
+}
+
+.banner-content p {
+  font-size: 1.1rem;
+
+  color: var(--text-secondary);
+}
+
+/* ==========================
+   INFO CARDS
+========================== */
+
+.unit-info {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 5rem 2rem;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 2rem;
+}
+
+.info-card {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  padding: 2rem;
+
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--primary);
+}
+
+.info-card h2 {
+  margin-bottom: 1rem;
+
+  color: white;
+}
+
+.info-card p {
+  color: var(--text-secondary);
+
+  line-height: 1.7;
+}
+
+/* ==========================
+   SEÇÕES
+========================== */
+
+.modalities-section,
+.schedule-section,
+.cta-section {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 0 2rem 5rem;
+}
+
+.modalities-section h2,
+.schedule-section h2,
+.cta-section h2 {
+  margin-bottom: 2rem;
+
+  text-align: center;
+
+  font-size: 2rem;
+}
+
+/* ==========================
+   MODALIDADES
+========================== */
+
+.modalities-section {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 4rem 2rem;
+
+  text-align: center;
+}
+
+.modalities-section h2 {
+  margin-bottom: 2rem;
+
+  font-size: 2rem;
+}
+
+.modalities-tags {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+}
+
+.modality-tag {
+  padding: 0.9rem 1.5rem;
+
+  border-radius: 999px;
+
+  background: rgba(0, 87, 255, 0.12);
+
+  border: 1px solid rgba(0, 87, 255, 0.3);
+
+  color: var(--primary);
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+
+  cursor: default;
+}
+
+.modality-tag:hover {
+  transform: translateY(-2px);
+
+  background: rgba(0, 87, 255, 0.2);
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 87, 255, 0.15);
+}
+
+/* ==========================
+   TABELA DE HORÁRIOS
+========================== */
+
+.table-container {
+  overflow-x: auto;
+
+  border-radius: 20px;
+}
+
+.schedule-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: var(--surface);
+
+  overflow: hidden;
+}
+
+.schedule-table thead {
+  background: var(--primary);
+}
+
+.schedule-table th {
+  padding: 18px;
+
+  text-align: left;
+
+  color: white;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.schedule-table td {
+  padding: 18px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-secondary);
+}
+
+.schedule-table tbody tr {
+  transition: 0.3s;
+}
+
+.schedule-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.schedule-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================
+   CTA
+========================== */
+
+.cta-section {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 5rem 2rem 6rem;
+}
+
+.cta-section p {
+  color: var(--text-secondary);
+
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+}
+
+.cta-buttons a:first-child {
+  background: var(--primary);
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 14px 28px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+.cta-buttons a:first-child:hover {
+  transform: translateY(-3px);
+
+  background: var(--primary-dark);
+}
+
+.cta-buttons a:last-child {
+  border: 1px solid var(--primary);
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 14px 28px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+.cta-buttons a:last-child:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(0,87,255,.1);
+}
+
+.cta-card {
+  text-align: center;
+
+  padding: 4rem 2rem;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--surface),
+      #16243d
+    );
+
+  border: 1px solid var(--border);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.cta-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 87, 255, 0.15);
+
+  top: -100px;
+  right: -100px;
+}
+
+.cta-badge {
+  display: inline-block;
+
+  margin-bottom: 1.5rem;
+
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(0, 87, 255, 0.15);
+
+  color: var(--primary);
+
+  font-weight: 600;
+}
+
+.cta-card h2 {
+  font-size: clamp(
+    2rem,
+    4vw,
+    3rem
+  );
+
+  margin-bottom: 1rem;
+}
+
+.cta-card p {
+  max-width: 700px;
+
+  margin: 0 auto 2rem;
+
+  line-height: 1.7;
+
+  color: var(--text-secondary);
+
+  font-size: 1.05rem;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media (max-width: 768px) {
+  .cta-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons a {
+    width: 100%;
+  }
+}
